@@ -1,0 +1,16 @@
+PODS:
+  - StagLayout (0.1.0)
+
+DEPENDENCIES:
+  - StagLayout (from `../`)
+
+EXTERNAL SOURCES:
+  StagLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  StagLayout: 1ceaaa44eafa59ea5eae4a7cc14b074f59394841
+
+PODFILE CHECKSUM: 64b317148f97a5022cb643ff25db660caf8c3c33
+
+COCOAPODS: 1.5.3
