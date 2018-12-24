@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'StagLayout_Example' do
+  pod 'StagLayout', :path => '../'
+
+  target 'StagLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
