@@ -4,7 +4,7 @@ import StagLayout
 class Tests: XCTestCase {
     
     func test_oneItemFullWidth() {
-        let frameHolder = StagLayoutFrameHolder(ratios: [1.0], itemSpacing: 4)
+        let frameHolder = StagLayoutFrameHolder(widthHeightRatios: [(1.0, 1.0)], itemSpacing: 4)
         frameHolder.prepare(itemCount: 1, contentWidth: 100)
 
         XCTAssertEqual(
@@ -14,7 +14,7 @@ class Tests: XCTestCase {
     }
 
     func test_twoItemsFullWidth() {
-        let frameHolder = StagLayoutFrameHolder(ratios: [1.0], itemSpacing: 4)
+        let frameHolder = StagLayoutFrameHolder(widthHeightRatios: [(1.0, 1.0)], itemSpacing: 4)
         frameHolder.prepare(itemCount: 2, contentWidth: 100)
 
         XCTAssertEqual(
@@ -28,7 +28,7 @@ class Tests: XCTestCase {
     }
 
 //    func test_twoItemsHalfWidth() {
-//        let frameHolder = StagLayoutFrameHolder(ratios: [0.5, 0.5], itemSpacing: 4)
+//        let frameHolder = StagLayoutFrameHolder(widthHeightRatios: [(0.5, 0.5)], itemSpacing: 4)
 //        frameHolder.prepare(itemCount: 1, contentWidth: 100)
 //
 //        XCTAssertEqual(

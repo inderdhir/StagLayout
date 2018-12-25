@@ -17,10 +17,10 @@ public class StagLayout: UICollectionViewLayout {
 
     private var frameHolder: StagLayoutFrameHolder!
 
-    public init(ratios: [CGFloat], itemSpacing: CGFloat) {
+    public init(widthHeightRatios: [(CGFloat, CGFloat)], itemSpacing: CGFloat) {
         super.init()
         frameHolder = StagLayoutFrameHolder(
-            ratios: ratios,
+            widthHeightRatios: widthHeightRatios,
             itemSpacing: itemSpacing
         )
     }

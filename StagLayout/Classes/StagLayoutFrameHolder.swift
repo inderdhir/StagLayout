@@ -15,7 +15,7 @@ public class StagLayoutFrameHolder {
 
     var cache = [UICollectionViewLayoutAttributes]()
 
-    private let ratios: [CGFloat]
+    private let widthHeightRatios: [(CGFloat, CGFloat)]
     private var contentWidth: CGFloat = 0
     private var contentHeight: CGFloat = 0
     private let itemSpacing: CGFloat
@@ -26,8 +26,8 @@ public class StagLayoutFrameHolder {
         return CGSize(width: contentWidth, height: contentHeight)
     }
 
-    public init(ratios: [CGFloat], itemSpacing: CGFloat) {
-        self.ratios = ratios
+    public init(widthHeightRatios: [(CGFloat, CGFloat)], itemSpacing: CGFloat) {
+        self.widthHeightRatios = widthHeightRatios
         self.itemSpacing = itemSpacing
     }
 
@@ -36,19 +36,19 @@ public class StagLayoutFrameHolder {
         
         var xOffset: CGFloat = 0
         var yOffset: CGFloat = 0
-        //        var previousItemFrame: CGRect?
 
         var ratioIndex = 0
         for item in 0 ..< itemCount {
-            if ratioIndex >= ratios.count { ratioIndex = 0 }
+            if ratioIndex >= widthHeightRatios.count { ratioIndex = 0 }
 
-            let widthHeight = contentWidth * ratios[ratioIndex]
-            let itemSize = CGSize(width: widthHeight, height: widthHeight)
+            let ratios = widthHeightRatios[ratioIndex]
+            let (width, height) = (contentWidth * ratios.0, contentWidth * ratios.1)
+            let itemSize = CGSize(width: width, height: width)
             let frame = CGRect(
                 x: xOffset,
                 y: yOffset,
-                width: widthHeight,
-                height: widthHeight
+                width: width,
+                height: height
             )
 
             let indexPath = IndexPath(item: item, section: 0)
@@ -58,7 +58,7 @@ public class StagLayoutFrameHolder {
 
             contentHeight = max(contentHeight, frame.maxY)
 
-            //            xOffset += itemSize.width + itemSp
+//              xOffset += itemSize.width + itemSp
             yOffset += itemSize.height + itemSpacing
 
             ratioIndex += 1
