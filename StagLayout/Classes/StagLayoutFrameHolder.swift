@@ -36,14 +36,26 @@ public class StagLayoutFrameHolder {
         
         var xOffset: CGFloat = 0
         var yOffset: CGFloat = 0
+        var previousItemFrame: CGRect?
 
         var ratioIndex = 0
-        for item in 0 ..< itemCount {
+        for index in 0 ..< itemCount {
             if ratioIndex >= widthHeightRatios.count { ratioIndex = 0 }
 
             let ratios = widthHeightRatios[ratioIndex]
-            let (width, height) = (contentWidth * ratios.0, contentWidth * ratios.1)
-            let itemSize = CGSize(width: width, height: width)
+            precondition(
+                ratios.0 >= 0 && ratios.1 >= 0 && ratios.0 <= 1 && ratios.1 <= 1,
+                "Ratios should be in [0.0, 1.0]"
+            )
+
+            var isFullWidth = ratios.0 == 1.0
+            let halfItemSpacing = itemSpacing * 0.5
+            let (width, height) = (
+                (contentWidth * ratios.0) - (isFullWidth ? 0 : halfItemSpacing),
+                contentWidth * ratios.1
+            )
+
+            let itemSize = CGSize(width: width, height: height)
             let frame = CGRect(
                 x: xOffset,
                 y: yOffset,
@@ -51,15 +63,29 @@ public class StagLayoutFrameHolder {
                 height: height
             )
 
-            let indexPath = IndexPath(item: item, section: 0)
+            let indexPath = IndexPath(item: index, section: 0)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = frame
             cache.append(attributes)
 
             contentHeight = max(contentHeight, frame.maxY)
 
-//              xOffset += itemSize.width + itemSp
-            yOffset += itemSize.height + itemSpacing
+            let hasReachedEnd = xOffset + width >= contentWidth
+            if isFullWidth || hasReachedEnd {
+                xOffset = 0
+            } else {
+                xOffset += itemSize.width + itemSpacing
+            }
+
+            if isFullWidth {
+                yOffset = frame.maxY + itemSpacing
+            } else if hasReachedEnd {
+                if let previousItemFrame = previousItemFrame {
+                    yOffset = min(frame.maxY, previousItemFrame.maxY) + itemSpacing
+                }
+            }
+            
+            previousItemFrame = frame
 
             ratioIndex += 1
         }
