@@ -48,7 +48,7 @@ public class StagLayoutFrameHolder {
                 "Ratios should be in [0.0, 1.0]"
             )
 
-            var isFullWidth = ratios.0 == 1.0
+            let isFullWidth = ratios.0 == 1.0
             let halfItemSpacing = itemSpacing * 0.5
             let (width, height) = (
                 (contentWidth * ratios.0) - (isFullWidth ? 0 : halfItemSpacing),
@@ -79,7 +79,7 @@ public class StagLayoutFrameHolder {
 
             if isFullWidth {
                 yOffset = frame.maxY + itemSpacing
-            } else if hasReachedEnd {
+            } else {
                 if let previousItemFrame = previousItemFrame {
                     yOffset = min(frame.maxY, previousItemFrame.maxY) + itemSpacing
                 }
