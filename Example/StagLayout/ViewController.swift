@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     private let collectionView: UICollectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
-            collectionViewLayout: StagLayout(widthHeightRatios: [(1.0, 1.0)], itemSpacing: 4)
+            collectionViewLayout: StagLayout(widthHeightRatios: [(1.0, 1.0), (0.5, 0.5), (0.5, 1.5), (0.5, 1.0)], itemSpacing: 4)
         )
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
