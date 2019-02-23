@@ -29,13 +29,10 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'StagLayout/Classes/**/*'
 
-  s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = 'Tests/*.swift'
-  end
-  
   # s.resource_bundles = {
   #   'StagLayout' => ['StagLayout/Assets/*.png']
   # }
