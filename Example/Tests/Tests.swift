@@ -178,27 +178,6 @@ class Tests: XCTestCase {
         )
     }
 
-//    func test_threeItems_3() {
-//        let frameHolder = StagLayoutFrameHolder(
-//            widthHeightRatios: [(0.33, 0.33)],
-//            itemSpacing: 4
-//        )
-//        frameHolder.prepare(itemCount: 3, contentWidth: 100)
-//
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 0, section: 0))?.frame,
-//            CGRect(x: 0, y: 0, width: 33 - 2, height: 33)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 1, section: 0))?.frame,
-//            CGRect(x: 33 + 2, y: 0, width: 33 - 2, height: 33)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 2, section: 0))?.frame,
-//            CGRect(x: 66 + 4, y: 0, width: 33 - 2, height: 33)
-//        )
-//    }
-
     func test_threeItems_4() {
         let frameHolder = StagLayoutFrameHolder(
             widthHeightRatios: [(0.5, 0.5), (0.5, 0.5), (1, 0.8)],
@@ -221,26 +200,26 @@ class Tests: XCTestCase {
     }
 
     // 0.5:0.5, 0.5:1.5, 0.5:1
-//    func test_threeItems_5() {
-//        let frameHolder = StagLayoutFrameHolder(
-//            widthHeightRatios: [(0.5, 0.5), (0.5, 0.5), (1, 0.8)],
-//            itemSpacing: 4
-//        )
-//        frameHolder.prepare(itemCount: 3, contentWidth: 100)
-//
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 0, section: 0))?.frame,
-//            CGRect(x: 0, y: 0, width: 50 - 2, height: 50)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 1, section: 0))?.frame,
-//            CGRect(x: 50 + 2, y: 0, width: 50 - 2, height: 50)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 2, section: 0))?.frame,
-//            CGRect(x: 0, y: 50 + 4, width: 100, height: 80)
-//        )
-//    }
+    func test_threeItems_5() {
+        let frameHolder = StagLayoutFrameHolder(
+            widthHeightRatios: [(0.5, 0.5), (0.5, 0.5), (1, 0.8)],
+            itemSpacing: 4
+        )
+        frameHolder.prepare(itemCount: 3, contentWidth: 100)
+
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 0, section: 0))?.frame,
+            CGRect(x: 0, y: 0, width: 50 - 2, height: 50)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 1, section: 0))?.frame,
+            CGRect(x: 50 + 2, y: 0, width: 50 - 2, height: 50)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 2, section: 0))?.frame,
+            CGRect(x: 0, y: 50 + 4, width: 100, height: 80)
+        )
+    }
 
     // 4 items, 1:1, 0.5:0.5, 0.5:0.5, 1:0.8
     func test_fourItems_1() {
@@ -294,57 +273,57 @@ class Tests: XCTestCase {
         )
     }
 
-//    // 4 items, 1:1, 0.5:0.5, 0.5:1.5, 0.5:1
-//    func test_fourItems_3() {
-//        let frameHolder = StagLayoutFrameHolder(
-//            widthHeightRatios: [(1.0, 1.0), (0.5, 0.5), (1.0, 0.8), (1.0, 1.0)],
-//            itemSpacing: 4
-//        )
-//        frameHolder.prepare(itemCount: 4, contentWidth: 100)
-//
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 0, section: 0))?.frame,
-//            CGRect(x: 0, y: 0, width: 50 - 2, height: 50)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 1, section: 0))?.frame,
-//            CGRect(x: 50 + 2, y: 0, width: 50 - 2, height: 50)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 2, section: 0))?.frame,
-//            CGRect(x: 0, y: 50 + 4, width: 100, height: 80)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 3, section: 0))?.frame,
-//            CGRect(x: 0, y: 134 + 4, width: 100, height: 100)
-//        )
-//    }
+    // 4 items, 1:1, 0.5:0.5, 0.5:1.5, 0.5:1
+    func test_fourItems_3() {
+        let frameHolder = StagLayoutFrameHolder(
+            widthHeightRatios: [(1.0, 1.0), (0.5, 0.5), (0.5, 1.5), (0.5, 1.0)],
+            itemSpacing: 4
+        )
+        frameHolder.prepare(itemCount: 4, contentWidth: 100)
 
-//    // 4 items, 0.5:0.5, 0.5:1.5, 0.5:1, 1:1
-//    func test_fourItems_4() {
-//        let frameHolder = StagLayoutFrameHolder(
-//            widthHeightRatios: [(0.5, 0.5), (0.5, 0.5), (1.0, 0.8), (1.0, 1.0)],
-//            itemSpacing: 4
-//        )
-//        frameHolder.prepare(itemCount: 4, contentWidth: 100)
-//
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 0, section: 0))?.frame,
-//            CGRect(x: 0, y: 0, width: 50 - 2, height: 50)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 1, section: 0))?.frame,
-//            CGRect(x: 50 + 2, y: 0, width: 50 - 2, height: 50)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 2, section: 0))?.frame,
-//            CGRect(x: 0, y: 50 + 4, width: 100, height: 80)
-//        )
-//        XCTAssertEqual(
-//            frameHolder.layoutAttributesForItem(at: IndexPath(row: 3, section: 0))?.frame,
-//            CGRect(x: 0, y: 134 + 4, width: 100, height: 100)
-//        )
-//    }
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 0, section: 0))?.frame,
+            CGRect(x: 0, y: 0, width: 100, height: 100)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 1, section: 0))?.frame,
+            CGRect(x: 0, y: 100 + 4, width: 50 - 2, height: 50)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 2, section: 0))?.frame,
+            CGRect(x: 50 + 2, y: 100 + 4, width: 50 - 2, height: 150)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 3, section: 0))?.frame,
+            CGRect(x: 0, y: 150 + 8, width: 50 - 2, height: 96)
+        )
+    }
+
+    // 4 items, 0.5:0.5, 0.5:1.5, 0.5:1, 1:1
+    func test_fourItems_4() {
+        let frameHolder = StagLayoutFrameHolder(
+            widthHeightRatios: [(0.5, 0.5), (0.5, 1.5), (0.5, 1.0), (1.0, 1.0)],
+            itemSpacing: 4
+        )
+        frameHolder.prepare(itemCount: 4, contentWidth: 100)
+
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 0, section: 0))?.frame,
+            CGRect(x: 0, y: 0, width: 50 - 2, height: 50)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 1, section: 0))?.frame,
+            CGRect(x: 50 + 2, y: 0, width: 50 - 2, height: 150)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 2, section: 0))?.frame,
+            CGRect(x: 0, y: 50 + 4, width: 50 - 2, height: 96)
+        )
+        XCTAssertEqual(
+            frameHolder.layoutAttributesForItem(at: IndexPath(row: 3, section: 0))?.frame,
+            CGRect(x: 0, y: 150 + 4, width: 100, height: 100)
+        )
+    }
 
     // 5 items, 1:1, 0.68:0.68, 0.32:0.68, 0.32:0.68, 0.68:0.68
     func test_fiveItems_1() {
@@ -430,7 +409,7 @@ class Tests: XCTestCase {
         )
         XCTAssertEqual(
             frameHolder.layoutAttributesForItem(at: IndexPath(row: 4, section: 0))?.frame,
-            CGRect(x: 50 + 2, y: 100 + 4 + 100 + 4, width: 50 - 2, height: 50)
+            CGRect(x: 50 + 2, y: 104 + 100 + 4, width: 50 - 2, height: 50)
         )
     }
 

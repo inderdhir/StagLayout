@@ -37,15 +37,15 @@ public class StagLayoutFrameHolder {
         var xOffset: CGFloat = 0
         var yOffset: CGFloat = 0
         var previousItemFrame: CGRect?
-
         var ratioIndex = 0
-        for index in 0 ..< itemCount {
+
+        for index in 0..<itemCount {
             if ratioIndex >= widthHeightRatios.count { ratioIndex = 0 }
 
             let ratios = widthHeightRatios[ratioIndex]
             precondition(
-                ratios.0 >= 0 && ratios.1 >= 0 && ratios.0 <= 1 && ratios.1 <= 1,
-                "Ratios should be in [0.0, 1.0]"
+                ratios.0 >= 0.0 && ratios.1 >= 0.0 && ratios.0 <= 1.0,
+                "Width ratio should be in [0.0, 1.0], with height ratio being in [0.0, ∞)"
             )
 
             let isFullWidth = ratios.0 == 1.0
@@ -55,13 +55,7 @@ public class StagLayoutFrameHolder {
                 contentWidth * ratios.1
             )
 
-            let itemSize = CGSize(width: width, height: height)
-            let frame = CGRect(
-                x: xOffset,
-                y: yOffset,
-                width: width,
-                height: height
-            )
+            var frame = CGRect(x: xOffset, y: yOffset, width: width, height: height)
 
             let indexPath = IndexPath(item: index, section: 0)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
@@ -71,10 +65,29 @@ public class StagLayoutFrameHolder {
             contentHeight = max(contentHeight, frame.maxY)
 
             let hasReachedEnd = xOffset + width >= contentWidth
-            if isFullWidth || hasReachedEnd {
+            let isItemNextToIt: Bool
+            if let previousItemFrame = previousItemFrame {
+                // check whether there's still room to place another item to the right of it
+                let isThereSpaceNextToIt = frame.maxY <= previousItemFrame.maxY
+                // Make sure there's no item next to it
+                isItemNextToIt = !isFullWidth && (frame.maxY - itemSpacing) <= previousItemFrame.maxY
+
+                // If there's an item next to it and no space, the next item should have an xOffset of 0
+                // and height will auto correct to not include spacing so that it is perfectly aligned
+                if !isThereSpaceNextToIt && isItemNextToIt {
+                    frame = CGRect(x: xOffset, y: yOffset, width: width, height: height - itemSpacing)
+                    attributes.frame = frame
+                    cache.removeLast()
+                    cache.append(attributes)
+                }
+            } else {
+                isItemNextToIt = false
+            }
+
+            if isFullWidth || hasReachedEnd || isItemNextToIt {
                 xOffset = 0
             } else {
-                xOffset += itemSize.width + itemSpacing
+                xOffset += frame.width + itemSpacing
             }
 
             if isFullWidth {
@@ -84,9 +97,8 @@ public class StagLayoutFrameHolder {
                     yOffset = min(frame.maxY, previousItemFrame.maxY) + itemSpacing
                 }
             }
-            
-            previousItemFrame = frame
 
+            previousItemFrame = frame
             ratioIndex += 1
         }
     }
