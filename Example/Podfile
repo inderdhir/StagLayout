@@ -6,6 +6,5 @@ target 'StagLayout_Example' do
   target 'StagLayout_Tests' do
     inherit! :search_paths
 
-    
   end
 end

@@ -11,7 +11,7 @@ extension Array {
     }
 }
 
-public class StagLayoutFrameHolder {
+class StagLayoutFrameHolder {
 
     var cache = [UICollectionViewLayoutAttributes]()
 
