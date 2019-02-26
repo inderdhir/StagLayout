@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/StagLayout.svg?style=flat)](https://cocoapods.org/pods/StagLayout)
 [![Platform](https://img.shields.io/cocoapods/p/StagLayout.svg?style=flat)](https://cocoapods.org/pods/StagLayout)
 
-![Example_1](example_1.png = 250x500)
+![Example_1](example_1.png)
 ![Example_2](example_2.png)
 ![Example_3](example_3.png)
 ![Example_4](example_4.png)
