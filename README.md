@@ -7,7 +7,6 @@
 ![Example_1](example_1.png)
 ![Example_2](example_2.png)
 ![Example_3](example_3.png)
-![Example_4](example_4.png)
 
 ## Example
 
