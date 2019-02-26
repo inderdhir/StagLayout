@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/cocoapods/l/StagLayout.svg?style=flat)](https://cocoapods.org/pods/StagLayout)
 [![Platform](https://img.shields.io/cocoapods/p/StagLayout.svg?style=flat)](https://cocoapods.org/pods/StagLayout)
 
+Customizable UICollectionViewLayout that uses ratios (based on the collection view's width) to determine sizing of the cells. Only 2 max items per row are supported currently.
+
 ![Example_1](example_1.png)
 ![Example_2](example_2.png)
 ![Example_3](example_3.png)
