@@ -35,7 +35,7 @@ public class StagLayout: UICollectionViewLayout {
 
     override public func prepare() {
         super.prepare()
-        guard frameHolder.prepared, let collectionView = collectionView else { return }
+        guard !frameHolder.prepared, let collectionView = collectionView, collectionView.numberOfSections > 0 else { return }
         frameHolder.prepare(itemCount: collectionView.numberOfItems(inSection: 0), contentWidth: contentWidth)
     }
 

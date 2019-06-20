@@ -20,7 +20,7 @@ class StagLayoutFrameHolder {
     private var contentHeight: CGFloat = 0
     private let itemSpacing: CGFloat
 
-    var prepared: Bool { return cache.isEmpty }
+    var prepared: Bool { return !cache.isEmpty }
 
     var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)

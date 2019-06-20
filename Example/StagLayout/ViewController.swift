@@ -50,5 +50,3 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
 }
-
-

@@ -212,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Q8X4D3A8MT;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Q8X4D3A8MT;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -266,21 +268,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StagLayout_Example/Pods-StagLayout_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-StagLayout_Example/Pods-StagLayout_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/StagLayout/StagLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StagLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StagLayout_Example/Pods-StagLayout_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StagLayout_Example/Pods-StagLayout_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D17453A880685F17CF6E4F8D /* [CP] Check Pods Manifest.lock */ = {
@@ -489,6 +487,7 @@
 			baseConfigurationReference = 18A6877F42655A0666A2F04D /* Pods-StagLayout_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q8X4D3A8MT;
 				INFOPLIST_FILE = StagLayout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -505,6 +504,7 @@
 			baseConfigurationReference = 2A5A4B1C8AE3E9F2F82B9E71 /* Pods-StagLayout_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q8X4D3A8MT;
 				INFOPLIST_FILE = StagLayout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -520,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3A530DD30ECFC05138678EB /* Pods-StagLayout_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = Q8X4D3A8MT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -542,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9AB90AF08021C8FB2923747 /* Pods-StagLayout_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = Q8X4D3A8MT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
