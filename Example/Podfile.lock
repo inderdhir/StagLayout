@@ -1,5 +1,5 @@
 PODS:
-  - StagLayout (1.0.1)
+  - StagLayout (1.0.3)
 
 DEPENDENCIES:
   - StagLayout (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  StagLayout: a82af84e3ab50a4362bd6d9b56b860f38584d589
+  StagLayout: a6e42dbaaec410b5778428916f3a2b0c0763c2cd
 
 PODFILE CHECKSUM: 20b208a43ca0819d3a0ffa0d65e34b89041edb77
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.8.3
