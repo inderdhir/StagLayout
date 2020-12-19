@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StagLayout'
-  s.version          = '1.0.4'
+  s.version          = '1.1.0'
   s.summary          = 'Mixture of 2x2 and 2x1 grids for CollectionViewLayout'
 
 # This description is used to generate tags and improve search results.
