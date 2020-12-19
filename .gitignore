@@ -2,6 +2,8 @@
 .DS_Store
 
 # Xcode
+.swiftpm
+.build/
 build/
 *.pbxuser
 !default.pbxuser

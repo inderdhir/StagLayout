@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  StagLayout
-//
-//  Created by Inder Dhir on 12/24/2018.
-//  Copyright (c) 2018 Inder Dhir. All rights reserved.
-//
-
 import UIKit
 import StagLayout
 
@@ -30,11 +22,13 @@ class ViewController: UIViewController {
         view.addSubview(collectionView)
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
         collectionView.dataSource = self
     }
 }

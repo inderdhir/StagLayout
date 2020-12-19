@@ -5,13 +5,15 @@
 //  Created by Inder Dhir on 12/25/18.
 //
 
-extension Array {
+import UIKit
+
+private extension Array {
     subscript (safe index: Int) -> Element? {
         return Int(index) < count ? self[Int(index)] : nil
     }
 }
 
-class StagLayoutFrameHolder {
+final class StagLayoutFrameHolder {
 
     var cache = [UICollectionViewLayoutAttributes]()
 
@@ -33,7 +35,7 @@ class StagLayoutFrameHolder {
 
     public func prepare(itemCount: Int, contentWidth: CGFloat) {
         self.contentWidth = contentWidth
-        
+
         var xOffset: CGFloat = 0
         var yOffset: CGFloat = 0
         var previousItemFrame: CGRect?
